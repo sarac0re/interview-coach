@@ -25,6 +25,10 @@ import streamlit as st
 from groq import Groq
 
 # Works both locally (env var) and on Streamlit Cloud (st.secrets)
+# Correctly fetching from st.secrets
+client = Groq(
+    api_key=st.secrets["GROQ_API_KEY"]
+)
 API_KEY = os.environ.get("GROQ_API_KEY") or st.secrets.get("GROQ_API_KEY", "")
 client = Groq(api_key=API_KEY)
 MODEL = "llama-3.3-70b-versatile"  # free, fast, strong general model on Groq
