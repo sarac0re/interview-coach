@@ -1,0 +1,4 @@
+strsamlit
+groq
+SpeechRecognition
+Streamlit-mic-recorder
